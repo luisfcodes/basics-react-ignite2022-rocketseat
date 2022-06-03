@@ -3,20 +3,10 @@ import { Header } from "./components/Header";
 import './global.css';
 import styles from './app.module.css';
 import { Sidebar } from "./components/Sidebar";
-import { Post } from "./components/Post";
+import { Post, PostProps } from "./components/Post";
 
-interface Posts {
-  id: number;
-  author: {
-    avatarUrl: string;
-    name: string;
-    role: string
-  },
-  content: {
-    type: 'paragraph' | 'link';
-    content: string
-  }[],
-  publishedAt: Date
+interface Posts extends PostProps {
+  id: number
 }
 
 const posts:Posts[] = [

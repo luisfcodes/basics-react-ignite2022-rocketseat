@@ -7,19 +7,17 @@ import ptBR from 'date-fns/locale/pt-BR'
 import styles from './styles.module.css'
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 
-interface Content {
-  type: 'paragraph' | 'link';
-  content: string;
-}
-
-interface PostProps {
+export interface PostProps {
   author: {
+    avatarUrl: string;
     name: string;
-    role: string;
-    avatarUrl: string
-  };
-  publishedAt: Date;
-  content: Content[];
+    role: string
+  },
+  content: {
+    type: 'paragraph' | 'link';
+    content: string
+  }[],
+  publishedAt: Date
 }
 
 export function Post({ author, publishedAt, content }: PostProps) {
